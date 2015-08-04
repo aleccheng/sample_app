@@ -44,17 +44,30 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   # Add gem Sqlite3 to :test because Heroku refuses to accept gem Sqlite3 in development
-  gem 'sqlite3'
+  #gem 'sqlite3'
+
+  #gem 'rspec-rails', '~>2.0.1'
+  gem 'rspec-rails', '~>3.3.0'
+
+  #Suggested online add test-unit gem
+  gem 'test-unit'
+
+  #Try newer version
+  gem 'rspec', '3.3.0'
+
+  #Suggested to include this gem for rspec issues
+  gem 'capybara'
+
 end
 
 #Add gem for sample_app
-group :development do
-  gem 'rspec-rails',  '2.0.1'
-end
+#group :development do
+  #gem 'rspec-rails',  '2.0.1'
+#end
 
 #Add gem for sample_app (2 of 2)
 group :test do
-  gem 'rspec', '2.0.1'
   gem 'webrat', '0.7.1'
+  gem 'spork', '0.8.4'
 end
 
