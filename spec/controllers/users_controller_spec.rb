@@ -1,11 +1,17 @@
-require 'rails_helper'
+require 'spec_helper'
 
-RSpec.describe UsersController, type: :controller do
+describe UsersController do
+  render_views
 
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
+  describe "GET 'new'" do
+    it "should be successful" do
+      get 'new'
+      response.should be_sucess
+    end
+
+    it "should have the right title" do
+      get 'new'
+      response.should have_selector("title", :text => "Sign up")
     end
   end
 
